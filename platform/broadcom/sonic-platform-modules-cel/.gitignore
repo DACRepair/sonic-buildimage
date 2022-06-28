@@ -57,3 +57,7 @@ dkms.conf
 *.postrm.debhelper
 *.prerm.debhelper
 *.substvars
+
+!/debian/platform-modules-redstonexp.init
+!/debian/platform-modules-redstonexp.install
+!/debian/platform-modules-redstonexp.postinst
