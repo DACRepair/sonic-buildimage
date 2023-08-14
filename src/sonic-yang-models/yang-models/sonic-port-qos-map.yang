@@ -2,7 +2,7 @@ module sonic-port-qos-map {
 
     yang-version 1.1;
 
-    namespace "http://github.com/Azure/sonic-port-qos-map";
+    namespace "http://github.com/sonic-net/sonic-port-qos-map";
 
     prefix pqm;
 
@@ -82,13 +82,13 @@ module sonic-port-qos-map {
 
                 leaf pfc_enable {
                     type string {
-                        pattern "[0-7](,[0-7])?";
+                        pattern "[0-7](,[0-7])*";
                     }
                 }
 
                 leaf pfcwd_sw_enable {
                     type string {
-                        pattern "[0-7](,[0-7])?";
+                        pattern "[0-7](,[0-7])*";
                     }
                     description
                         "Specify the queue(s) on which software pfc watchdog are enabled.";
@@ -99,7 +99,7 @@ module sonic-port-qos-map {
                         path "/ppqm:sonic-pfc-priority-queue-map/ppqm:MAP_PFC_PRIORITY_TO_QUEUE/ppqm:MAP_PFC_PRIORITY_TO_QUEUE_LIST/ppqm:name";
                     }
                 }
-               
+
                 leaf pfc_to_pg_map {
                     type leafref {
                         path "/pppgm:sonic-pfc-priority-priority-group-map/pppgm:PFC_PRIORITY_TO_PRIORITY_GROUP_MAP/pppgm:PFC_PRIORITY_TO_PRIORITY_GROUP_MAP_LIST/pppgm:name";
